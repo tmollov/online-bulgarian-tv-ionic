@@ -1,0 +1,7 @@
+{
+  "name": "mobile-tv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

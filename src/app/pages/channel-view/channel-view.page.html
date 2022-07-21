@@ -1,0 +1,9 @@
+<app-header>
+  <app-back-button url="{{url}}"></app-back-button>
+</app-header>
+
+<ion-content>
+  <ng-container *ngIf="showVideo">
+    <iframe [src]="videoSource" frameborder=0 allowfullscreen="true"></iframe>
+  </ng-container>
+</ion-content>
