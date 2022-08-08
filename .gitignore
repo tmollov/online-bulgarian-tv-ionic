@@ -130,3 +130,8 @@ dist
 .pnp.*
 
 .angular/
+
+android/.gradle
+android/.idea
+android/local.properties
+
