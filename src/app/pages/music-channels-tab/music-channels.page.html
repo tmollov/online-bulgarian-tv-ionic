@@ -1,5 +1,12 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-channels-grid-view [channelsArray]="channelService.musicChannels"></app-channels-grid-view>
+  <ng-container *ngIf="channelService.musicChannels.length > 0">
+    <app-channels-grid-view [channelsArray]="channelService.musicChannels"></app-channels-grid-view>
+  </ng-container>
+
+  <ng-container *ngIf="channelService.musicChannels.length <= 0">
+    <app-no-internet></app-no-internet>
+  </ng-container>
+
 </ion-content>

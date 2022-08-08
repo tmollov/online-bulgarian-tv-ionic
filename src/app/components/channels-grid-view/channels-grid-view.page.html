@@ -1,15 +1,14 @@
 <ion-content>
-  <ion-row class="flex content-evenly justify-center">
-    <ng-container *ngFor="let channel of channelsArray; trackBy:identify">
+    <ion-row class="flex content-evenly justify-center">
 
+      <ng-container *ngFor="let channel of channelsArray; trackBy:identify">
         <ion-card class="hover:cursor-pointer p-2" (click)="goTo(channel.name)">
           <img class="mx-auto" src="{{channel.imageUrl}}" />
           <ion-card-header class="p-0 pt-3">
             <ion-card-title class="text-center">{{channel.displayName}}</ion-card-title>
           </ion-card-header>
         </ion-card>
+      </ng-container>
 
-    </ng-container>
-  </ion-row>
-
+    </ion-row>
 </ion-content>

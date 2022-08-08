@@ -1,5 +1,15 @@
 img {
-  max-width: 100px;
   background-color: #264060;
   border-radius: 15px;
+}
+
+ion-card {
+  width: 100px;
+}
+
+@media only screen and (max-width: 250px) {
+  ion-card {
+    display: block;
+    width: 100%;
+  }
 }

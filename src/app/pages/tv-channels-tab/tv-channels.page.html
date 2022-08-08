@@ -1,5 +1,15 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-channels-grid-view [channelsArray]="channelService.tvChannels"></app-channels-grid-view>
+
+  <ng-container *ngIf="channelService.tvChannels.length > 0">
+    <app-channels-grid-view [channelsArray]="channelService.tvChannels"></app-channels-grid-view>
+  </ng-container>
+
+  <ng-container *ngIf="channelService.tvChannels.length <= 0">
+
+    <app-no-internet></app-no-internet>
+
+  </ng-container>
+
 </ion-content>

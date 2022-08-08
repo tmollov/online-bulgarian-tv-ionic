@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ChannelsGridViewPageRoutingModule } from './channels-grid-view-routing.module';
-
 import { ChannelsGridViewPage } from './channels-grid-view.page';
 
 @NgModule({
@@ -13,7 +11,6 @@ import { ChannelsGridViewPage } from './channels-grid-view.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    //ChannelsGridViewPageRoutingModule,
   ],
   declarations: [ChannelsGridViewPage],
   exports: [ChannelsGridViewPage],

@@ -1,0 +1,17 @@
+.no-net-section {
+    height: 60vh;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      
+  
+    & .no-net-icon {
+      font-size: 72px;
+    }
+  
+    & .no-net-title {
+      font-size: 26px;
+    }
+  }
+  

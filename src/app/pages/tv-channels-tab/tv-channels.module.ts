@@ -7,6 +7,7 @@ import { TvChannelsPageRoutingModule } from "./tv-channels-routing.module";
 import { HeaderPageModule } from "../header/header.module";
 import { TvChannelsPage } from "./tv-channels.page";
 import { ChannelsGridViewPageModule } from "src/app/components/channels-grid-view/channels-grid-view.module";
+import { NoInternetPageModule } from "src/app/components/no-internet/no-internet.module";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ChannelsGridViewPageModule } from "src/app/components/channels-grid-vie
     TvChannelsPageRoutingModule,
     HeaderPageModule,
     ChannelsGridViewPageModule,
+    NoInternetPageModule,
   ],
   declarations: [TvChannelsPage],
 })

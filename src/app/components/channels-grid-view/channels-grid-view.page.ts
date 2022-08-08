@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ReturnUrl } from "src/app/constants/returnUrl";
 import { IChannel } from "src/app/models/channel.inteface";
-import { ChannelsService } from "src/app/services/channels.service";
 
 @Component({
   selector: "app-channels-grid-view",
@@ -12,7 +11,7 @@ import { ChannelsService } from "src/app/services/channels.service";
 export class ChannelsGridViewPage {
   @Input() channelsArray: IChannel[];
 
-  constructor(public channels: ChannelsService, private router: Router) {}
+  constructor(private router: Router) {}
 
   identify(index, item: IChannel) {
     return item.name;
@@ -20,7 +19,6 @@ export class ChannelsGridViewPage {
 
   goTo(channelName: string) {
     ReturnUrl.path = window.location.pathname;
-
     this.router.navigate(["/channel/", channelName]);
   }
 }

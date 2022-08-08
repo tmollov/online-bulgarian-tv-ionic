@@ -21,6 +21,10 @@ const routes: Routes = [
         (m) => m.BackButtonPageModule
       ),
   },
+  {
+    path: 'no-internet',
+    loadChildren: () => import('./components/no-internet/no-internet.module').then( m => m.NoInternetPageModule)
+  },
 ];
 @NgModule({
   imports: [

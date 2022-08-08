@@ -7,6 +7,7 @@ import { MusicChannelsPage } from "./music-channels.page";
 import { MusicChannelsPageRoutingModule } from "./music-channels-routing.module";
 import { HeaderPageModule } from "../header/header.module";
 import { ChannelsGridViewPageModule } from "src/app/components/channels-grid-view/channels-grid-view.module";
+import { NoInternetPageModule } from "src/app/components/no-internet/no-internet.module";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ChannelsGridViewPageModule } from "src/app/components/channels-grid-vie
     MusicChannelsPageRoutingModule,
     HeaderPageModule,
     ChannelsGridViewPageModule,
+    NoInternetPageModule
   ],
   declarations: [MusicChannelsPage],
 })

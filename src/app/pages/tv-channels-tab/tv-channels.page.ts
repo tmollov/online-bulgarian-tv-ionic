@@ -1,19 +1,26 @@
 /* eslint-disable max-len */
-import { Component, OnInit } from '@angular/core';
-import { IChannel } from 'src/app/models/channel.inteface';
-import { ChannelsService } from 'src/app/services/channels.service';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs/internal/Subscription";
+import { ChannelsService } from "src/app/services/channels.service";
 
 @Component({
-  selector: 'app-tv-channels',
-  templateUrl: 'tv-channels.page.html',
-  styleUrls: ['tv-channels.page.scss'],
+  selector: "app-tv-channels",
+  templateUrl: "tv-channels.page.html",
+  styleUrls: ["tv-channels.page.scss"],
 })
-export class TvChannelsPage implements OnInit {
+export class TvChannelsPage implements OnInit, OnDestroy {
+  subscriptions: Subscription[] = [];
   constructor(public channelService: ChannelsService) {}
 
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
+  }
+
   ngOnInit(): void {
-    this.channelService.fetchTvChannels().subscribe((res) => {
-      this.channelService.tvChannels = res;
-    });
+    this.subscriptions.push(
+      this.channelService.fetchTvChannels().subscribe((res) => {
+        this.channelService.tvChannels = res;
+      })
+    );
   }
 }
