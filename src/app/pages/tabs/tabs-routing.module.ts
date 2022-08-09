@@ -28,11 +28,6 @@ const routes: Routes = [
             (m) => m.InfoTabPageModule
           ),
       },
-      {
-        path: '',
-        redirectTo: '/home/tv',
-        pathMatch: 'full',
-      },
     ],
   },
   {

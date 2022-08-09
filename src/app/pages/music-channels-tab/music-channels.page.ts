@@ -9,18 +9,25 @@ import { ChannelsService } from "src/app/services/channels.service";
 })
 export class MusicChannelsPage implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-
+  isLoading = true;
+  
   constructor(public channelService: ChannelsService) {}
 
   ngOnDestroy(): void {
     this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.subscriptions.push(
-      this.channelService.fetchMusicChannels().subscribe((res) => {
-        this.channelService.musicChannels = res;
-      })
+      this.channelService.fetchMusicChannels().subscribe(
+        (res) => {
+          this.channelService.musicChannels = res;
+          this.isLoading = false;
+        },
+        () => {
+          this.isLoading = false;
+        }
+      )
     );
   }
 }

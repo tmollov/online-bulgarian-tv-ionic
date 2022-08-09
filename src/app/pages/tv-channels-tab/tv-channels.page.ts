@@ -10,6 +10,7 @@ import { ChannelsService } from "src/app/services/channels.service";
 })
 export class TvChannelsPage implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
+  isLoading = true;
   constructor(public channelService: ChannelsService) {}
 
   ngOnDestroy(): void {
@@ -18,9 +19,15 @@ export class TvChannelsPage implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.channelService.fetchTvChannels().subscribe((res) => {
-        this.channelService.tvChannels = res;
-      })
+      this.channelService.fetchTvChannels().subscribe(
+        (res) => {
+          this.channelService.tvChannels = res;
+          this.isLoading = false;
+        },
+        () => {
+          this.isLoading = false;
+        }
+      )
     );
   }
 }

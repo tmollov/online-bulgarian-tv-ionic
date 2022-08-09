@@ -4,10 +4,11 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { MusicChannelsPage } from "./music-channels.page";
 
-import { MusicChannelsPageRoutingModule } from "./music-channels-routing.module";
 import { HeaderPageModule } from "../header/header.module";
 import { ChannelsGridViewPageModule } from "src/app/components/channels-grid-view/channels-grid-view.module";
 import { NoInternetPageModule } from "src/app/components/no-internet/no-internet.module";
+import { LoaderPageModule } from "src/app/components/loader/loader.module";
+import { MusicChannelsPageRoutingModule } from "./music-channels-routing.module";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { NoInternetPageModule } from "src/app/components/no-internet/no-internet
     MusicChannelsPageRoutingModule,
     HeaderPageModule,
     ChannelsGridViewPageModule,
-    NoInternetPageModule
+    NoInternetPageModule,
+    LoaderPageModule,
   ],
   declarations: [MusicChannelsPage],
 })

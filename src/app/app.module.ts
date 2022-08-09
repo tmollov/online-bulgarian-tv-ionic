@@ -16,7 +16,6 @@ import { ChannelsService } from './services/channels.service';
     IonicModule.forRoot({ animated: false }),
     AppRoutingModule,
     HttpClientModule,
-
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

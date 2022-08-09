@@ -2,14 +2,20 @@
 
 <ion-content>
 
-  <ng-container *ngIf="channelService.tvChannels.length > 0">
-    <app-channels-grid-view [channelsArray]="channelService.tvChannels"></app-channels-grid-view>
+  <ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
   </ng-container>
 
-  <ng-container *ngIf="channelService.tvChannels.length <= 0">
+  <ng-container *ngIf="!isLoading">
 
-    <app-no-internet></app-no-internet>
+    <ng-container *ngIf="channelService.tvChannels.length > 0">
+      <app-channels-grid-view [channelsArray]="channelService.tvChannels"></app-channels-grid-view>
+    </ng-container>
 
+    <ng-container *ngIf="channelService.tvChannels.length <= 0">
+      <app-no-internet></app-no-internet>
+    </ng-container>
+    
   </ng-container>
 
 </ion-content>
